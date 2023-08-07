@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Appointment{% endblock %}
+{% block content %}
+<h1 align="center">Zeit und Datum</h1>
+<ul class="list-group list-group-flush" id="date">
+    {% for date in user.dates %}
+    <li class="list-group-item">
+        {{ date.data }}
+    </li>
+    {% endfor %}
+</ul>
+<form id="create-appointment-form" action="/appointments" method="POST">
+    <label for="date">Datum auswählen:</label>
+    <input type="date" id="date1" name="date" min="2023-08-03" max="2024-10-03" required>
+    <label for="time">Zeit auswählen:</label>
+    <input type="time" id="time" name="time" value="11:30" step="1800" required>
+    <button type="submit" class="btn btn-primary">Bestätigen</button>
+</form>
+
+<h2>Match Appointments</h2>
+<a href="/match-appointments" class="btn btn-primary">Match Appointments</a>
+
+
+</ul>
+{% endblock %}

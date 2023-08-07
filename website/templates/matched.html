@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Matched Appointments{% endblock %}
+{% block content %}
+<h1>Matched Appointments</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Current Username</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Partner Username</th>
+            <th> Partner ID</th>
+            <!-- <th> User ID</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in matched_appointments %}
+        <tr>
+            <td>{{ appointment.Current_username }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.time }}</td>
+            <td>{{ appointment.partner_username }}</td>
+            <td>{{ appointment.Current_user_id }}</td>
+            <!-- <td>{{ appointment.id }}</td> -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
